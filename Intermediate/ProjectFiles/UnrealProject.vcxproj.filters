@@ -39,4 +39,9 @@
       <Filter>Source\UnrealProject</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source\UnrealProject\Characters">
+      <UniqueIdentifier>{de78c172-622b-466f-881a-a8b741098294}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
 </Project>
