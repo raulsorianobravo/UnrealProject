@@ -11,6 +11,10 @@
     <None Include="..\..\Source\UnrealProjectEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\.vsconfig" />
+    <None Include="..\..\README.md" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -38,10 +42,14 @@
     <ClInclude Include="..\..\Source\UnrealProject\UnrealProject.h">
       <Filter>Source\UnrealProject</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="Source\UnrealProject\Characters">
-      <UniqueIdentifier>{de78c172-622b-466f-881a-a8b741098294}</UniqueIdentifier>
+      <UniqueIdentifier>{9D9206F2-3DD7-392A-B00A-3F5C4CA12ABE}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\UnrealProject\Characters\PlayerCharacter.cpp">
+      <Filter>Source\UnrealProject\Characters</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealProject\Characters\PlayerCharacter.h">
+      <Filter>Source\UnrealProject\Characters</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

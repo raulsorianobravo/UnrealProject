@@ -4,7 +4,7 @@
 APlayerCharacter::APlayerCharacter()
 {
 	// Establezca esta character para llamar. Marca() cada fotograma. Puede desactivar esta opción para mejorar el rendimiento si no lo necesita.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 }
 
 // Se llama cuando se inicia el juego o cuando se genera
