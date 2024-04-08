@@ -4,6 +4,9 @@
 #include "GameFramework/Character.h"
 #include "PlayerCharacter.generated.h"
 
+class USpringArmComponent;
+class UCameraComponent;
+
 UCLASS()
 class UNREALPROJECT_API APlayerCharacter : public ACharacter
 {
@@ -14,6 +17,13 @@ public:
 	APlayerCharacter();
 
 protected:
+
+	UPROPERTY(EditDefaultsOnly,Category=Components)
+	USpringArmComponent* SpringArmComponent;
+
+	UPROPERTY(EditDefaultsOnly, Category = Components)
+	UCameraComponent* CameraComponent;
+
 	// Se llama cuando se inicia el juego o cuando se genera
 	virtual void BeginPlay() override;
 
