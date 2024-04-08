@@ -11,6 +11,8 @@ APlayerCharacter::APlayerCharacter()
 void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Orange, TEXT("PlayerCharacter"));
+	UE_LOG(LogTemp,Log,TEXT("Log PlayerCharacter"));
 }
 
 // Llamada a cada fotograma
