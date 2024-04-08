@@ -52,4 +52,10 @@
       <Filter>Source\UnrealProject\Characters</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\UnrealProject\InitGameMode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\UnrealProject\InitGameMode.cpp" />
+  </ItemGroup>
 </Project>
