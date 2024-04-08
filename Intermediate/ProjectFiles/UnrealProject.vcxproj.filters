@@ -33,6 +33,12 @@
     <Filter Include="Source\UnrealProject">
       <UniqueIdentifier>{553CD66E-891B-3E4A-ABB2-377884EC38B6}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\UnrealProject\InitGameMode.cpp">
+      <Filter>Source\UnrealProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealProject\InitGameMode.h">
+      <Filter>Source\UnrealProject</Filter>
+    </ClInclude>
     <None Include="..\..\Source\UnrealProject\UnrealProject.Build.cs">
       <Filter>Source\UnrealProject</Filter>
     </None>
@@ -51,11 +57,5 @@
     <ClInclude Include="..\..\Source\UnrealProject\Characters\PlayerCharacter.h">
       <Filter>Source\UnrealProject\Characters</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\UnrealProject\InitGameMode.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\UnrealProject\InitGameMode.cpp" />
   </ItemGroup>
 </Project>
