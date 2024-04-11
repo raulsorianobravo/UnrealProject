@@ -6,7 +6,9 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"C:/Users/raulsb/Documents/Unreal Projects/UnrealProject/Content/Maps/TestMap.umap",
-				"C:/Users/raulsb/Documents/Unreal Projects/UnrealProject/Content/Blueprints/BP_PlayerCharacter.uasset"
+				"C:/Users/raulsb/Documents/Unreal Projects/UnrealProject/Content/Blueprints/BP_PlayerCharacter.uasset",
+				"C:/Users/raulsb/Documents/Unreal Projects/UnrealProject/Content/Input/IM_MappingContext.uasset",
+				"C:/Users/raulsb/Documents/Unreal Projects/UnrealProject/Content/Input/IA_Move.uasset"
 			]
 		}
 	]

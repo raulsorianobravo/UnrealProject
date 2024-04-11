@@ -6,6 +6,9 @@
 
 class USpringArmComponent;
 class UCameraComponent;
+class UInputMappingContext;
+class UInputAction;
+struct FInputActionValue;
 
 UCLASS()
 class UNREALPROJECT_API APlayerCharacter : public ACharacter
@@ -24,8 +27,16 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = Components)
 	UCameraComponent* CameraComponent;
 
+	UPROPERTY(EditDefaultsOnly, Category = Input)
+	UInputMappingContext* DefaultMappingContext;
+
+	UPROPERTY(EditDefaultsOnly, Category = Input)
+	UInputAction* MoveAction;
+
 	// Se llama cuando se inicia el juego o cuando se genera
 	virtual void BeginPlay() override;
+
+	void Move(const FInputActionValue& Value);
 
 public:
 	// Llamada a cada fotograma

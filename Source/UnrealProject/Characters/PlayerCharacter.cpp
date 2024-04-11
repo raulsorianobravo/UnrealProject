@@ -2,6 +2,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include <EnhancedInputComponent.h>
 
 // Establece valores predeterminados
 APlayerCharacter::APlayerCharacter()
@@ -30,6 +31,11 @@ void APlayerCharacter::BeginPlay()
 	if (!IsValid(PlayerController)) return;
 
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer());
+
+	if (!IsValid(Subsystem)) return;
+	Subsystem->AddMappingContext(DefaultMappingContext, 0);
+
+
 }
 
 // Llamada a cada fotograma
@@ -42,4 +48,34 @@ void APlayerCharacter::Tick(float DeltaTime)
 void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent);
+
+	if (!IsValid(EnhancedInputComponent)) return;
+
+	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Move);
+}
+
+void APlayerCharacter::Move(const FInputActionValue& InputActionValue)
+{
+	UE_LOG(LogTemp, Log, TEXT("Move"));
+
+	FVector2D MovementVector = InputActionValue.Get<FVector2d>();
+	if (!IsValid(Controller)) return;
+
+	const FRotator Rotation = Controller->GetControlRotation();
+
+	const FRotator YawRotation = FRotator(0, Rotation.Yaw, 0);
+
+	const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+	const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+
+	AddMovementInput(ForwardDirection, MovementVector.Y);
+	AddMovementInput(RightDirection, MovementVector.X);
+
+
+
+
+
+
 }
