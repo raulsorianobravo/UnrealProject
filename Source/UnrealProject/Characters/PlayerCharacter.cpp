@@ -14,8 +14,12 @@ APlayerCharacter::APlayerCharacter()
 	SpringArmComponent->SetupAttachment(RootComponent);
 	SpringArmComponent->TargetArmLength = 400.0f;
 
+	SpringArmComponent->bUsePawnControlRotation = true;
+
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>("CameraComponent");
 	CameraComponent->SetupAttachment(SpringArmComponent);
+
+	CameraComponent->bUsePawnControlRotation = true;
 }
 
 
