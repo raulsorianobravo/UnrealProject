@@ -190,8 +190,6 @@
     <ClCompile_AdditionalOptions>$(AdditionalOptions) /Yu"$(SolutionDir)Intermediate\Build\Win64\x64\UnrealProjectEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"</ClCompile_AdditionalOptions>
   </PropertyGroup>
   <ItemGroup>
-    <ClCompile Include="ProjectileActor.cpp" />
-    <ClInclude Include="ProjectileActor.h" />
     <None Include="..\..\UnrealProject.uproject" />
     <None Include="..\..\Source\UnrealProject.Target.cs" />
     <None Include="..\..\Source\UnrealProjectEditor.Target.cs" />
@@ -203,11 +201,13 @@
     <None Include="..\..\Config\DefaultEngine.ini" />
     <None Include="..\..\Config\DefaultGame.ini" />
     <None Include="..\..\Config\DefaultInput.ini" />
+    <ClCompile Include="..\..\Source\UnrealProject\Actors\ProjectileActor.cpp" />
     <ClCompile Include="..\..\Source\UnrealProject\InitGameMode.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealProject\Actors\ProjectileActor.h" />
     <ClInclude Include="..\..\Source\UnrealProject\InitGameMode.h" />
     <None Include="..\..\Source\UnrealProject\UnrealProject.Build.cs" />
     <ClCompile Include="..\..\Source\UnrealProject\UnrealProject.cpp">
