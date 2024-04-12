@@ -58,14 +58,21 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	if (!IsValid(EnhancedInputComponent)) return;
 
 	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Move);
+
+	EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Look);
+
+	EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
+
+	EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
+
 }
 
 void APlayerCharacter::Move(const FInputActionValue& InputActionValue)
 {
 	UE_LOG(LogTemp, Log, TEXT("Move"));
 
-	FVector2D MovementVector = InputActionValue.Get<FVector2d>();
 	if (!IsValid(Controller)) return;
+	FVector2D MovementVector = InputActionValue.Get<FVector2d>();
 
 	const FRotator Rotation = Controller->GetControlRotation();
 
@@ -77,9 +84,15 @@ void APlayerCharacter::Move(const FInputActionValue& InputActionValue)
 	AddMovementInput(ForwardDirection, MovementVector.Y);
 	AddMovementInput(RightDirection, MovementVector.X);
 
+}
 
+void APlayerCharacter::Look(const FInputActionValue& InputActionValue)
+{
+		if (!IsValid(Controller)) return;
 
+		FVector2D LookVector = InputActionValue.Get<FVector2d>();
 
-
+		AddControllerYawInput(LookVector.X);
+		AddControllerPitchInput(LookVector.Y);
 
 }

@@ -33,10 +33,17 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = Input)
 	UInputAction* MoveAction;
 
+	UPROPERTY(EditDefaultsOnly, Category = Input)
+	UInputAction* LookAction;
+
+	UPROPERTY(EditDefaultsOnly, Category = Input)
+	UInputAction* JumpAction;
+
 	// Se llama cuando se inicia el juego o cuando se genera
 	virtual void BeginPlay() override;
 
-	void Move(const FInputActionValue& Value);
+	void Move(const FInputActionValue& InputActionValue);
+	void Look(const FInputActionValue& InputActionValue);
 
 public:
 	// Llamada a cada fotograma
