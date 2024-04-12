@@ -48,6 +48,15 @@
     <ClInclude Include="..\..\Source\UnrealProject\UnrealProject.h">
       <Filter>Source\UnrealProject</Filter>
     </ClInclude>
+    <Filter Include="Source\UnrealProject\Actors">
+      <UniqueIdentifier>{D8371069-1544-3234-A125-1FC5D20C7E13}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealProject\Actors\ProjectileActor.cpp">
+      <Filter>Source\UnrealProject\Actors</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealProject\Actors\ProjectileActor.h">
+      <Filter>Source\UnrealProject\Actors</Filter>
+    </ClInclude>
     <Filter Include="Source\UnrealProject\Characters">
       <UniqueIdentifier>{9D9206F2-3DD7-392A-B00A-3F5C4CA12ABE}</UniqueIdentifier>
     </Filter>
@@ -57,11 +66,5 @@
     <ClInclude Include="..\..\Source\UnrealProject\Characters\PlayerCharacter.h">
       <Filter>Source\UnrealProject\Characters</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\UnrealProject\Actors\ProjectileActor.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\UnrealProject\Actors\ProjectileActor.cpp" />
   </ItemGroup>
 </Project>
